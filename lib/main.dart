@@ -1,4 +1,5 @@
-import 'package:features/bottomsheet/draggableScrollableSheet1.dart';
+// import 'package:features/bottomsheet/draggableScrollableSheet1.dart';
+import 'package:features/bottomsheet/draggableScrollableSheet2.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,10 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Sheet(),
+      // home: Sheet(),
+      home: Scaffold(
+        body: Sheet2(child: SizedBox(height: 100,),),
+      ),
     );
   }
 }
