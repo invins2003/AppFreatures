@@ -81,7 +81,17 @@ class _Sheet2State extends State<Sheet2> {
               controller: scrollController,
               slivers: [
                 SliverToBoxAdapter(
-                  child: widget.child, // Replace with your actual widget
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 16),
+                      _buildHeader(), // Dummy header UI
+                      const SizedBox(height: 16),
+                      _buildContent(), // Dummy content UI
+                      const SizedBox(height: 16),
+                      _buildButtons(), // Dummy buttons UI
+                      const SizedBox(height: 16),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -89,5 +99,71 @@ class _Sheet2State extends State<Sheet2> {
         },
       );
     });
+  }
+
+  Widget _buildHeader() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text(
+            'Bottom Sheet Title',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: hide, // Hides the bottom sheet
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildContent() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Text(
+            'This is a dummy description for the bottom sheet UI. '
+            'It can contain multiple lines of text, images, or any other widgets you want to display.',
+            style: TextStyle(fontSize: 16),
+          ),
+          SizedBox(height: 8),
+          Text(
+            'Additional details or widgets can be placed here.',
+            style: TextStyle(fontSize: 14, color: Colors.grey),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildButtons() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              // Action for the button
+            },
+            child: const Text('Confirm'),
+          ),
+          OutlinedButton(
+            onPressed: () {
+              // Action for the button
+            },
+            child: const Text('Cancel'),
+          ),
+        ],
+      ),
+    );
   }
 }
