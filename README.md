@@ -15,9 +15,6 @@ This Flutter project demonstrates the implementation of a **custom draggable bot
 - **Content**: Placeholder text to simulate real content.
 - **Buttons**: Includes "Confirm" and "Cancel" buttons with customizable actions.
 
-## Screenshots
-
-_Add screenshots or GIFs of the app here_
 
 ## Getting Started
 
